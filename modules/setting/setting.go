@@ -113,6 +113,7 @@ var (
 		ContentPath     string `ini:"LFS_CONTENT_PATH"`
 		JWTSecretBase64 string `ini:"LFS_JWT_SECRET"`
 		JWTSecretBytes  []byte `ini:"-"`
+		JWTExpires      int    `ini:"LFS_JWT_EXPIRES"`
 	}
 
 	// Security settings

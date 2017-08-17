@@ -269,7 +269,7 @@ func runServ(c *cli.Context) error {
 		token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 			"repo": repo.ID,
 			"op":   lfsVerb,
-			"exp":  now.Add(5 * time.Minute).Unix(),
+			"exp":  now.Add(time.Duration(setting.LFS.JWTExpires) * time.Minute).Unix(),
 			"nbf":  now.Unix(),
 		})
 
